@@ -9,7 +9,9 @@ function App() {
     <div className="content">
       <div className="container">
         <div className="content__top">
-        <Categories items={['мясные', 'вегетарианские', 'гриль', 'острые', 'закрытые']}/>
+        <Categories 
+        onClick={(item) => alert(item)}
+        items={['мясные', 'вегетарианские', 'гриль', 'острые', 'закрытые']}/>
           <div className="sort">
             <div className="sort__label">
               <svg
