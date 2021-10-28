@@ -33,7 +33,6 @@ function Categories({items, onClick}) {
   const onSelectItem = (i) => {
     setActiveItem(i)
   }
-  console.log(items)
     return (
         <div className="categories">
         <ul>
@@ -53,4 +52,5 @@ function Categories({items, onClick}) {
 }
 
 export default Categories
+
 
