@@ -34,7 +34,6 @@ function Categories({items, onClick}) {
     setActiveItem(i)
   }
   console.log(items)
-
     return (
         <div className="categories">
         <ul>
