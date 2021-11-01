@@ -11,17 +11,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-const inc = () => {
-  store.dispatch({
-    type: 'counter/incremented'
-  })
-}
-
-store.subscribe(() => {
-  console.log('changed', store.getState())
-})
-
-
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
