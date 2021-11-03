@@ -26,3 +26,20 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
+
+
+class App {
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: 123,
+      name: 4
+    }
+  }
+  
+}
