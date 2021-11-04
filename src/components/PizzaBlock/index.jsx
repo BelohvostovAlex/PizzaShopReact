@@ -18,8 +18,6 @@ function PizzaBlock({name, imageUrl, price, types, sizes}) {
     setSizeState(i)
   }
 
-
-
     return (
         <div className="pizza-block">
         <img
