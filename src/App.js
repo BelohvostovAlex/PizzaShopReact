@@ -9,9 +9,14 @@ import { Route } from 'react-router-dom';
 import {setPizzas} from './redux/actions/pizzas';
 
 
+<<<<<<< HEAD
 // function App () {
 
 //   const dispatch = useDispatch();
+=======
+function App () {
+  const dispatch = useDispatch();
+>>>>>>> bcc6b2794047f739edb35c575fd599bff79c2d0b
 
 //   React.useEffect(() => {
 //     axios.get('http://localhost:3000/db.json').then(({data}) => dispatch(setPizzas(data.pizzas))
@@ -19,6 +24,7 @@ import {setPizzas} from './redux/actions/pizzas';
 //   }, [])
 
 
+<<<<<<< HEAD
 
 //   return (
 //     <div className="wrapper">
@@ -30,6 +36,18 @@ import {setPizzas} from './redux/actions/pizzas';
 //   </div>
 //   )
 // }
+=======
+  return (
+    <div className="wrapper">
+    <Header />
+    <div className="content">
+      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/cart" component={Cart}></Route>
+    </div>
+  </div>
+  )
+}
+>>>>>>> bcc6b2794047f739edb35c575fd599bff79c2d0b
 
 // export default App
 
