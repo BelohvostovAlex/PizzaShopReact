@@ -32,6 +32,7 @@ function Categories({items, onClick}) {
   
   const onSelectItem = (i) => {
     setActiveItem(i)
+    onClick(i)
   }
     return (
         <div className="categories">
