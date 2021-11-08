@@ -57,7 +57,7 @@ function Home() {
       <div className="content__items">
 
         {pizzasState.isLoaded 
-        ? pizzasState.items.map(item => <PizzaBlock {...item} key={item.id}/>) 
+        ? pizzasState.items.map(item => <PizzaBlock {...item} key={item.id} onClickAddPizza={(obj) => console.log(obj)}/>) 
         : Array(10).fill('pizza').map((item,index) => item = <PizzaLoadingBlock key={index}/>)}
       </div>
     </div>
