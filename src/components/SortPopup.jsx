@@ -13,7 +13,8 @@ const SortPopup = React.memo(function SortPopup({sortList, activeSortBy, onClick
     }
 
     const handleOutsideClick = (e) => {
-        if(!e.path.includes(sortRef.current)) {
+        const path = e.path || (e.composedPath && e.composedPath());
+        if(!path.includes(sortRef.current)) {
             setShowPopup(false)
         }
     }

@@ -38,7 +38,7 @@ function Home() {
 
   const onClickSortBy = React.useCallback((type) => {
     dispatch(setSortBy(type))
-  })
+  },[])
   
   return (
     <div className="container">
