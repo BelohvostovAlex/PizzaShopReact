@@ -12,9 +12,6 @@ function Header() {
     totalCount: cartReducer.itemsCount
   }))
 
-  console.log(totalCount)
-  console.log(totalPrice)
-
     return (
         <div className="header">
         <div className="container">

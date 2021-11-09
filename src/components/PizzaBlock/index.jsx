@@ -81,7 +81,6 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
                 fill="white"
               />
             </svg>
-            {console.log(addedCount)}
             <span>Добавить</span>
             {addedCount && 
                 <i>{addedCount}</i>}
