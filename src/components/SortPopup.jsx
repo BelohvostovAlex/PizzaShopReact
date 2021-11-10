@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes, { object } from 'prop-types'
+import PropTypes from 'prop-types'
 
 const SortPopup = React.memo(function SortPopup({sortList, activeSortBy, onClickSortBy}) {
 
     const [showPopup, setShowPopup] = React.useState(false)
     const sortRef = React.useRef()
     const activeLabel = sortList.find(item => item.type === activeSortBy)
-    console.log(activeLabel)
 
     const toggleShowPopup = () => {
         setShowPopup(!showPopup)
@@ -72,7 +71,7 @@ const SortPopup = React.memo(function SortPopup({sortList, activeSortBy, onClick
 })
 
 SortPopup.propTypes = {
-    sortList: PropTypes.arrayOf(object), 
+    sortList: PropTypes.array, 
     onClickSortBy: PropTypes.func,
 }
 

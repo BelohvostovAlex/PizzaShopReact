@@ -58,7 +58,7 @@ function Home() {
         {pizzasState.isLoaded
           ? pizzasState.items.map((item) => (
               <PizzaBlock {...item} key={item.id} onClickAddPizza={handleAddPizzaToCart} 
-              addedCount={cartItems[item.id] && cartItems[item.id].length}/>
+              addedCount={cartItems[item.id] && cartItems[item.id].items.length}/>
             ))
           : Array(10)
               .fill('pizza')

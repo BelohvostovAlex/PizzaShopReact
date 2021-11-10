@@ -9,7 +9,7 @@ function Header() {
 
   const { totalPrice, totalCount } = useSelector( ({ cartReducer }) => ({
     totalPrice: cartReducer.totalPrice,
-    totalCount: cartReducer.itemsCount
+    totalCount: cartReducer.totalCount
   }))
 
     return (
@@ -28,7 +28,7 @@ function Header() {
           <div className="header__cart">
           <Link to="/cart">
           <Button className="button--cart">
-            <span>{totalPrice} ₽</span>
+            <span>{totalPrice} BYN</span>
               <div className="button__delimiter"></div>
               <svg
                 width="18"
