@@ -1,9 +1,17 @@
 import React from 'react'
 import Button from './Button'
 
-function CartItem({ id, name, size, type, price, count, onRemove }) {
+function CartItem({ id, name, size, type, price, count, img, onRemove, onPlus, onMinus }) {
   const handleRemoveClick = () => {
     onRemove(id)
+  }
+
+  const handlePlusClick = () => {
+    onPlus(id)
+  }
+
+  const handleMinusClick = () => {
+    onMinus(id)
   }
 
     return (
@@ -11,7 +19,7 @@ function CartItem({ id, name, size, type, price, count, onRemove }) {
         <div className="cart__item-img">
           <img
             className="pizza-block__image"
-            src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
+            src={img}
             alt="Pizza"
           />
         </div>
@@ -20,7 +28,8 @@ function CartItem({ id, name, size, type, price, count, onRemove }) {
           <p>{type} тесто, {size} см.</p>
         </div>
         <div className="cart__item-count">
-          <div className="button button--outline button--circle cart__item-count-minus">
+          <Button className="button--circle cart__item-count-minus" outline
+          onClick={handleMinusClick}>
             <svg
               width="10"
               height="10"
@@ -36,9 +45,11 @@ function CartItem({ id, name, size, type, price, count, onRemove }) {
                 fill="#EB5A1E"
               />
             </svg>
-          </div>
+            </Button>
           <b>{count}</b>
-          <div className="button button--outline button--circle cart__item-count-plus">
+
+            <Button className="button--circle cart__item-count-plus" outline
+            onClick={handlePlusClick}>
             <svg
               width="10"
               height="10"
@@ -54,7 +65,8 @@ function CartItem({ id, name, size, type, price, count, onRemove }) {
                 fill="#EB5A1E"
               />
             </svg>
-          </div>
+            </Button>
+
         </div>
         <div className="cart__item-price">
           <b>{price} BYN</b>

@@ -1,30 +1,41 @@
-import React from 'react'
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import cartEmptyImg from '../assets/img/empty-cart.png'
-import CartItem from '../components/CartItem';
-import {clearCart, removeCartItem} from '../redux/actions/cart'
+import cartEmptyImg from '../assets/img/empty-cart.png';
+import {CartItem, Button} from '../components';
 
+import { clearCart, removeCartItem, minusItem, plusItem } from '../redux/actions/cart';
 
 function Cart() {
-  const dispatch = useDispatch()
-  const { totalPrice, totalCount, items} = useSelector(({ cartReducer }) => cartReducer)
-  const addedPizzas = Object.keys(items).map(key => items[key].items[0])
+  const dispatch = useDispatch();
+  const { totalPrice, totalCount, items } = useSelector(({ cartReducer }) => cartReducer);
+  const addedPizzas = Object.keys(items).map((key) => items[key].items[0]);
 
   const onClearCart = () => {
-    if(window.confirm('Вы действительно хотите очистить корзину?')) {
-      dispatch(clearCart())
+    if (window.confirm('Вы действительно хотите очистить корзину?')) {
+      dispatch(clearCart());
     } else {
-      return
+      return;
     }
-  }
+  };
 
   const onRemoveItem = (id) => {
-    if(window.confirm('Do you want to delete this pizza(s)?'))
-    dispatch(removeCartItem(id))
+    if (window.confirm('Do you want to delete this pizza(s)?')) dispatch(removeCartItem(id));
+  };
+
+  const onPlusItem = (id) => {
+    dispatch(plusItem(id));
+  };
+
+  const onMinusItem = (id) => {
+    dispatch(minusItem(id));
+  };
+
+  const onClickPayment = () => {
+    alert(`Ваш заказ принят!\nСпасибо за покупку и приятного аппетита`)
+    console.log(`Заказ:`, items)
   }
-  
 
   return (
     <div className="content">
@@ -107,13 +118,17 @@ function Cart() {
               {addedPizzas &&
                 addedPizzas.map((obj) => (
                   <CartItem
+                    key={obj.id}
                     id={obj.id}
                     name={obj.name}
                     type={obj.type}
                     size={obj.size}
+                    img={obj.imageUrl}
                     price={items[obj.id].totalPrice}
                     count={items[obj.id].items.length}
                     onRemove={onRemoveItem}
+                    onPlus={onPlusItem}
+                    onMinus={onMinusItem}
                   />
                 ))}
             </div>
@@ -145,16 +160,18 @@ function Cart() {
 
                   <span>Вернуться назад</span>
                 </Link>
-                <div className="button pay-btn">
+                <Button 
+                className="pay-btn"
+                onClick={onClickPayment}>
                   <span>Оплатить сейчас</span>
-                </div>
+                </Button>
               </div>
             </div>
           </div>
         ) : (
           <div className="cart cart--empty">
             <h2>
-              Корзина пустая <icon>😕</icon>
+              Корзина пустая <i>😕</i>
             </h2>
             <p>
               Вероятней всего, вы не заказывали ещё пиццу.
@@ -172,4 +189,4 @@ function Cart() {
   );
 }
 
-export default Cart
+export default Cart;

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import Button from '../Button'
 
 
-function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, addedCount}) {
+function PizzaBlock({ id, name, descr, imageUrl, price, types, sizes, onClickAddPizza, addedCount}) {
   const availableTypes = ['тонкое', 'традиционное']
   const availableSizes = [26, 30, 40]
 
@@ -24,6 +24,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
     const obj = {
       id,
       name,
+      descr,
       imageUrl,
       price,
       size: availableSizes[sizeState],
@@ -34,12 +35,17 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
 
     return (
         <div className="pizza-block">
-        <img
+
+       <div className="pizza-block__topTogether">
+       <img
           className="pizza-block__image"
           src={imageUrl}
           alt="Pizza"
         />
-        <h4 className="pizza-block__title">{name}</h4>
+       <h4 className="pizza-block__title">{name}</h4>
+        <p className="pizza-block__descr">{descr}</p>
+       </div>
+        <div className="pizza-block__bottomTogether">
         <div className="pizza-block__selector">
           <ul>
             {availableTypes.map((type,index) => (
@@ -67,7 +73,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
           </ul>
         </div>
         <div className="pizza-block__bottom">
-          <div className="pizza-block__price">от {price} ₽</div>
+          <div className="pizza-block__price">от {price} BYN</div>
           <Button className="button--add" outline
                   onClick={handleAddPizza}>
             <svg
@@ -86,6 +92,7 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes, onClickAddPizza, 
                 <i>{addedCount}</i>}
            
           </Button>
+        </div>
         </div>
       </div>
     )
