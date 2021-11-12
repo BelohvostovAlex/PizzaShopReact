@@ -146,3 +146,25 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .button--cart span {
+    font-size: 21px;
+  }
+
+  .button--cart svg {
+    height: 21px;
+    width: 21px;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .button--cart span {
+    font-size: 16px;
+  }
+
+  .button--cart svg {
+    height: 18px;
+    width: 18px;
+  }
+}

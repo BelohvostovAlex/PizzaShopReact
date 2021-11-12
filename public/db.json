@@ -9,7 +9,7 @@
         "sizes": [26, 30, 40],
         "price": 16.40,
         "category": 0,
-        "rating": 4
+        "popular": 7
       },
       {
         "id": 1,
@@ -20,7 +20,7 @@
         "sizes": [26, 40],
         "price": 18.90,
         "category": 1,
-        "rating": 6
+        "popular": 10
       },
       {
         "id": 2,
@@ -30,8 +30,8 @@
         "types": [0],
         "sizes": [26, 40],
         "price": 16.40,
-        "category": 1,
-        "rating": 4
+        "category": 2,
+        "popular": 6
       },
       {
         "id": 3,
@@ -42,7 +42,7 @@
         "sizes": [26, 30, 40],
         "price": 18.90,
         "category": 2,
-        "rating": 2
+        "popular": 5
       },
       {
         "id": 4,
@@ -53,7 +53,7 @@
         "sizes": [26, 30, 40],
         "price": 18.90,
         "category": 3,
-        "rating": 8
+        "popular": 8
       },
       {
         "id": 5,
@@ -63,8 +63,8 @@
         "types": [0],
         "sizes": [30, 40],
         "price": 18.90,
-        "category": 2,
-        "rating": 2
+        "category": 3,
+        "popular": 9
       },
       {
         "id": 6,
@@ -74,8 +74,8 @@
         "types": [0, 1],
         "sizes": [26, 30, 40],
         "price": 11.40,
-        "category": 1,
-        "rating": 9
+        "category": 0,
+        "popular": 8
       },
       {
         "id": 7,
@@ -85,8 +85,8 @@
         "types": [0, 1],
         "sizes": [26, 30, 40],
         "price": 5.90,
-        "category": 4,
-        "rating": 10
+        "category": 1,
+        "popular": 4
       },
       {
         "id": 8,
@@ -96,8 +96,8 @@
         "types": [0, 1],
         "sizes": [26, 30, 40],
         "price": 16.40,
-        "category": 5,
-        "rating": 10
+        "category": 0,
+        "popular": 3
       },
       {
         "id": 9,
@@ -106,9 +106,9 @@
         "descr": "Томатный соус, веганский сыр, томаты, шампиньоны, лук, сладкий зеленый перец, маслины",
         "types": [0, 1],
         "sizes": [26, 30, 40],
-        "price": 285,
-        "category": 5,
-        "rating": 7
+        "price": 6.90,
+        "category": 1,
+        "popular": 3
       },
       {
         "id": 10,
@@ -119,7 +119,7 @@
         "sizes": [26, 40],
         "price": 18.90,
         "category": 5,
-        "rating": 7
+        "popular": 5
       },
       {
         "id": 11,
@@ -129,8 +129,8 @@
         "types": [0],
         "sizes": [26, 30, 40],
         "price": 19.90,
-        "category": 5,
-        "rating": 7
+        "category": 0,
+        "popular": 6
       },
       {
         "id": 12,
@@ -140,8 +140,19 @@
         "types": [0, 1],
         "sizes": [26, 30, 40],
         "price": 16.40,
-        "category": 5,
-        "rating": 7
+        "category": 2,
+        "popular": 7
+      },
+      {
+        "id": 13,
+        "imageUrl": "https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/628a3f67-1d51-4c0b-9761-7ee6b7985506.jpg",
+        "name": "Пицца-пирог 🌱👶",
+        "descr": "Ананасы, молоко сгущеное, брусника",
+        "types": [0, 1],
+        "sizes": [26],
+        "price": 5.90,
+        "category": 4,
+        "popular": 7
       }
     ]
   }

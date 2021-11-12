@@ -10,7 +10,7 @@ import { fetchPizzas } from '../redux/actions/pizzas'
 import { addPizzaToCart } from '../redux/actions/cart'
 
 
-const categoryNames = ['мясные', 'вегетарианские', 'гриль', 'острые', 'закрытые']
+const categoryNames = ['мясные', 'вегетарианские', 'гриль', 'острые', 'сладкие']
 const sortList= [
   {name: 'популярности', type: 'popular', order: 'desc'}, 
   {name: 'цене', type: 'price', order: 'desc'}, 

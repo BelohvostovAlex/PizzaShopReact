@@ -45,11 +45,13 @@ const cart = (state = initialState, action) => {
       const currentTotalPrice = newItems[action.payload].totalPrice;
       const currentTotalCount = newItems[action.payload].items.length;
       delete newItems[action.payload];
+      const newTotalPrice = (state.totalPrice - currentTotalPrice).toFixed(2)
+      const newTotalCount = (state.totalCount - currentTotalCount)
       return {
         ...state,
         items: newItems,
-        totalPrice: state.totalPrice - currentTotalPrice,
-        totalCount: state.totalCount - currentTotalCount,
+        totalPrice: newTotalPrice,
+        totalCount: newTotalCount,
       };
     }
 

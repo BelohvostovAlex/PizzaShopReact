@@ -312,3 +312,149 @@ body {
     }
   }
 }
+
+@media screen and (max-width:1265px) {
+  .content__items {
+   justify-content: center;
+  }
+  .content__top {
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .cart {
+    &__item {
+      justify-content: space-between;
+      &-img {
+        width: 12%;
+      }
+  
+      &-info {
+        width: 27%;
+      }
+  
+      &-count {
+        width: 20%;
+      }
+  
+      &-price {
+        width: 20%;
+      }
+  
+      &-remove {
+        width: 10%;
+    }
+    }
+   
+}
+}
+@media screen and (max-width:772px) {
+  .content__top {
+   flex-direction: column;
+  }
+
+  .cart__bottom{
+    border-top: 2px solid #467061;
+    &-details {
+      margin-top: 10px;
+    }
+  }
+
+  .cart__item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &-img {
+      width: 100%;
+      justify-content: center;
+      margin-right: 0px;
+      margin-bottom: 10px;
+      img {
+        width: 255px;
+        height: auto;
+      }
+    }
+
+    &-info {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &-count {
+      justify-content: center;
+      width: 100%;
+      margin-bottom: 10px;
+        b{
+          margin: 0 15px;
+        }
+    }
+
+    &-price {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    &-remove {
+      width: 100%;
+  }
+  }
+
+  .cart--empty {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cart__bottom-details {
+    flex-direction: column;
+  }
+
+  .cart__clear span {
+    display: none;
+  }
+
+  .cart__clear svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cart__bottom-buttons .go-back-btn {
+    width: 100px;
+    & span {
+    display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cart__bottom-buttons {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .cart__item-img img {
+    width: 180px;
+  }
+
+  .cart__bottom-buttons .go-back-btn {
+    width: 210px;
+    margin-bottom: 20px;
+    & span {
+    display: inline-block;
+    }
+  }
+  .cart--empty img {
+    width: 200px;
+    height: auto;
+  }
+
+  .cart--empty .button--black {
+    width: 180px;
+  }
+  .cart .content__title {
+    font-size: 22px;
+  }
+}

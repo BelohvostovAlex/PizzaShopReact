@@ -10,8 +10,9 @@
       border-radius: 30px;
       margin-right: 10px;
       font-weight: bold;
+      box-shadow: 1px 1px 5px rgb(235, 235, 235);
       cursor: pointer;
-      transition: background-color 0.1s ease-in-out;
+      transition: background-color $duration ease-in-out;
       @include noselect();
 
       &:hover {
@@ -28,4 +29,14 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 1250px){
+    ul {
+      flex-wrap: wrap;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
 }
