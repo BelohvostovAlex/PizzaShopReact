@@ -40,3 +40,13 @@
       }
     }
 }
+
+@media screen and (max-width: 450px) {
+  .categories {
+    overflow-x: auto;
+    width: 100%;
+    ul {
+      flex-wrap: nowrap;
+    }
+  } 
+}

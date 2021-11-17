@@ -430,6 +430,26 @@ body {
 }
 
 @media screen and (max-width: 450px) {
+  body {
+    padding: 10px 0px;
+  }
+  .wrapper {
+    width: calc(100vw - 20px);
+  }
+
+  .content {
+    padding-bottom: 40px;
+    padding-top: 0px;
+  }
+  .content__top {
+    position: sticky;
+    background-color: #fff;
+    padding: 20px 0px;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    z-index: 20;
+  }
   .cart__bottom-buttons {
     flex-direction: column;
     justify-content: center;
