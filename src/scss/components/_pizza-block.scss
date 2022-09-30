@@ -1,4 +1,4 @@
-@import '../variables';
+@import "../variables";
 
 .pizza-block {
   width: 22%;
@@ -9,7 +9,6 @@
   flex-flow: column;
   justify-content: space-between;
   cursor: pointer;
-    
 
   &__image {
     width: 255px;
@@ -60,7 +59,7 @@
           background: #ffffff;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
           border-radius: 5px;
-          color: #E0475B;
+          color: #e0475b;
         }
         &.disabled {
           opacity: 0.4;
@@ -85,24 +84,24 @@
   }
 }
 
-@media screen and (max-width:1400px) {
+@media screen and (max-width: 1400px) {
   .pizza-block {
     width: 30%;
   }
 }
 
-@media screen and (max-width:1265px) {
+@media screen and (max-width: 1265px) {
   .pizza-block {
     width: 40%;
   }
 }
 
-@media screen and (max-width:830px) {
+@media screen and (max-width: 830px) {
   .pizza-block {
     width: 90%;
     margin-right: 0px;
     position: relative;
-    
+
     &:after {
       display: block;
       content: "";
@@ -126,4 +125,3 @@
     height: auto;
   }
 }
-

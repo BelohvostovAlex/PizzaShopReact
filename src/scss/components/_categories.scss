@@ -1,4 +1,4 @@
-@import '../variables';
+@import "../variables";
 
 .categories {
   ul {
@@ -31,14 +31,14 @@
   }
 }
 
-@media screen and (max-width: 1250px){
-    ul {
-      flex-wrap: wrap;
+@media screen and (max-width: 1250px) {
+  ul {
+    flex-wrap: wrap;
 
-      li {
-        margin-bottom: 10px;
-      }
+    li {
+      margin-bottom: 10px;
     }
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -48,5 +48,5 @@
     ul {
       flex-wrap: nowrap;
     }
-  } 
+  }
 }

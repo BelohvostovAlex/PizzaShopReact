@@ -1,21 +1,25 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
+import { Categories, SortPopup, PizzaBlock } from "../components";
+import PizzaLoadingBlock from "../components/PizzaBlock/PizzaLoadingBlock";
 
-import { Categories, SortPopup, PizzaBlock } from '../components';
-import PizzaLoadingBlock from '../components/PizzaBlock/PizzaLoadingBlock' 
+import { setCategory, setSortBy } from "../redux/actions/filters";
+import { fetchPizzas } from "../redux/actions/pizzas";
+import { addPizzaToCart } from "../redux/actions/cart";
 
-import { setCategory, setSortBy } from '../redux/actions/filters'
-import { fetchPizzas } from '../redux/actions/pizzas'
-import { addPizzaToCart } from '../redux/actions/cart'
-
-
-const categoryNames = ['мясные', 'вегетарианские', 'гриль', 'острые', 'сладкие']
-const sortList= [
-  {name: 'популярности', type: 'popular', order: 'desc'}, 
-  {name: 'цене', type: 'price', order: 'desc'}, 
-  {name:'алфавиту', type: 'name', order: 'asc'},
-]
+const categoryNames = [
+  "мясные",
+  "вегетарианские",
+  "гриль",
+  "острые",
+  "сладкие",
+];
+const sortList = [
+  { name: "популярности", type: "popular", order: "desc" },
+  { name: "цене", type: "price", order: "desc" },
+  { name: "алфавиту", type: "name", order: "asc" },
+];
 
 function Home() {
   const dispatch = useDispatch();
@@ -25,9 +29,12 @@ function Home() {
       isLoaded: pizzasReducer.isLoaded,
     };
   });
+
   const cartItems = useSelector(({ cartReducer }) => cartReducer.items);
 
-  const { sortBy, category } = useSelector(({ filterReducer }) => filterReducer);
+  const { sortBy, category } = useSelector(
+    ({ filterReducer }) => filterReducer
+  );
 
   React.useEffect(() => {
     dispatch(fetchPizzas(sortBy, category));
@@ -51,17 +58,27 @@ function Home() {
           items={categoryNames}
           activeCategory={category}
         />
-        <SortPopup sortList={sortList} activeSortBy={sortBy.type} onClickSortBy={onClickSortBy} />
+        <SortPopup
+          sortList={sortList}
+          activeSortBy={sortBy.type}
+          onClickSortBy={onClickSortBy}
+        />
       </div>
       <h2 className="content__title">Все пиццы</h2>
       <div className="content__items">
         {pizzasState.isLoaded
           ? pizzasState.items.map((item) => (
-              <PizzaBlock {...item} key={item.id} onClickAddPizza={handleAddPizzaToCart} 
-              addedCount={cartItems[item.id] && cartItems[item.id].items.length}/>
+              <PizzaBlock
+                {...item}
+                key={item.id}
+                onClickAddPizza={handleAddPizzaToCart}
+                addedCount={
+                  cartItems[item.id] && cartItems[item.id].items.length
+                }
+              />
             ))
           : Array(10)
-              .fill('pizza')
+              .fill("pizza")
               .map((item, index) => (item = <PizzaLoadingBlock key={index} />))}
       </div>
     </div>

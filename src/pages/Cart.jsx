@@ -1,19 +1,27 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
-import cartEmptyImg from '../assets/img/empty-cart.png';
-import {CartItem, Button} from '../components';
+import cartEmptyImg from "../assets/img/empty-cart.png";
+import { CartItem, Button } from "../components";
 
-import { clearCart, removeCartItem, minusItem, plusItem } from '../redux/actions/cart';
+import {
+  clearCart,
+  removeCartItem,
+  minusItem,
+  plusItem,
+} from "../redux/actions/cart";
 
 function Cart() {
   const dispatch = useDispatch();
-  const { totalPrice, totalCount, items } = useSelector(({ cartReducer }) => cartReducer);
+
+  const { totalPrice, totalCount, items } = useSelector(
+    ({ cartReducer }) => cartReducer
+  );
   const addedPizzas = Object.keys(items).map((key) => items[key].items[0]);
 
   const onClearCart = () => {
-    if (window.confirm('Вы действительно хотите очистить корзину?')) {
+    if (window.confirm("Вы действительно хотите очистить корзину?")) {
       dispatch(clearCart());
     } else {
       return;
@@ -21,7 +29,8 @@ function Cart() {
   };
 
   const onRemoveItem = (id) => {
-    if (window.confirm('Do you want to delete this pizza(s)?')) dispatch(removeCartItem(id));
+    if (window.confirm("Do you want to delete this pizza(s)?"))
+      dispatch(removeCartItem(id));
   };
 
   const onPlusItem = (id) => {
@@ -33,9 +42,9 @@ function Cart() {
   };
 
   const onClickPayment = () => {
-    alert(`Ваш заказ принят!\nСпасибо за покупку и приятного аппетита`)
-    console.log(`Заказ:`, items)
-  }
+    alert(`Ваш заказ принят!\nСпасибо за покупку и приятного аппетита`);
+    console.log(`Заказ:`, items);
+  };
 
   return (
     <div className="content">
@@ -49,7 +58,8 @@ function Cart() {
                   height="18"
                   viewBox="0 0 18 18"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M6.33333 16.3333C7.06971 16.3333 7.66667 15.7364 7.66667 15C7.66667 14.2636 7.06971 13.6667 6.33333 13.6667C5.59695 13.6667 5 14.2636 5 15C5 15.7364 5.59695 16.3333 6.33333 16.3333Z"
                     stroke="white"
@@ -80,7 +90,8 @@ function Cart() {
                   height="20"
                   viewBox="0 0 20 20"
                   fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M2.5 5H4.16667H17.5"
                     stroke="#B6B6B6"
@@ -142,13 +153,17 @@ function Cart() {
                 </span>
               </div>
               <div className="cart__bottom-buttons">
-                <Link to="/" className="button button--outline button--add go-back-btn">
+                <Link
+                  to="/"
+                  className="button button--outline button--add go-back-btn"
+                >
                   <svg
                     width="8"
                     height="14"
                     viewBox="0 0 8 14"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
                     <path
                       d="M7 13L1 6.93015L6.86175 1"
                       stroke="#D3D3D3"
@@ -160,9 +175,7 @@ function Cart() {
 
                   <span>Вернуться назад</span>
                 </Link>
-                <Button 
-                className="pay-btn"
-                onClick={onClickPayment}>
+                <Button className="pay-btn" onClick={onClickPayment}>
                   <span>Оплатить сейчас</span>
                 </Button>
               </div>

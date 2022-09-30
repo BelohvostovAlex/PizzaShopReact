@@ -10,7 +10,7 @@ const getTotalPrice = (arr) => {
 
 const cart = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD_PIZZA_TO_CART':
+    case "ADD_PIZZA_TO_CART":
       const currentPizzasAmount = !state.items[action.payload.id]
         ? [action.payload]
         : [...state.items[action.payload.id].items, action.payload];
@@ -31,22 +31,22 @@ const cart = (state = initialState, action) => {
         totalPrice: totalPrice,
       };
 
-    case 'CLEAR_CART':
+    case "CLEAR_CART":
       return {
         items: {},
         totalCount: 0,
         totalPrice: 0,
       };
 
-    case 'REMOVE_CART_ITEM': {
+    case "REMOVE_CART_ITEM": {
       const newItems = {
         ...state.items,
       };
       const currentTotalPrice = newItems[action.payload].totalPrice;
       const currentTotalCount = newItems[action.payload].items.length;
       delete newItems[action.payload];
-      const newTotalPrice = (state.totalPrice - currentTotalPrice).toFixed(2)
-      const newTotalCount = (state.totalCount - currentTotalCount)
+      const newTotalPrice = (state.totalPrice - currentTotalPrice).toFixed(2);
+      const newTotalCount = state.totalCount - currentTotalCount;
       return {
         ...state,
         items: newItems,
@@ -55,9 +55,10 @@ const cart = (state = initialState, action) => {
       };
     }
 
-    case 'MINUS_ITEM_CART': {
+    case "MINUS_ITEM_CART": {
       const oldItems = state.items[action.payload].items;
-      const newItemsMinus = oldItems.length > 1 ? oldItems.slice(0, -1) : oldItems;
+      const newItemsMinus =
+        oldItems.length > 1 ? oldItems.slice(0, -1) : oldItems;
       const newItems = {
         ...state.items,
         [action.payload]: {
@@ -78,7 +79,7 @@ const cart = (state = initialState, action) => {
       };
     }
 
-    case 'PLUS_ITEM_CART': {
+    case "PLUS_ITEM_CART": {
       const newItemsPlus = [
         ...state.items[action.payload].items,
         state.items[action.payload].items[0],

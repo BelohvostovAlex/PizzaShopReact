@@ -1,4 +1,4 @@
-@import '../variables';
+@import "../variables";
 
 .header {
   border-bottom: 1px solid $gray-line;
@@ -25,7 +25,7 @@
     }
 
     p {
-      color: #8AA899;
+      color: #8aa899;
     }
   }
 }
@@ -77,7 +77,6 @@
 }
 
 @media screen and (max-width: 400px) {
-
   .header__logo h1 {
     font-size: 22px;
   }
